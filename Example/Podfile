@@ -3,7 +3,7 @@ platform :ios, '10.0'
 
 target 'Example' do
   use_frameworks!
-  pod 'MQTTClient'
+  pod 'MQTTClient/Websocket', :path => '../'
 end
 
 target 'UITests' do

@@ -19,10 +19,20 @@ class ViewController: UIViewController, MQTTSessionDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        session.transport = MQTTCFSocketTransport()
-        session.transport.host = "test.mosquitto.org"
-        session.transport.port = 1883
+
+        // WSS configuration
+        let websocket = MQTTWebsocketTransport()
+        let username = "rw"
+        let password = "readwrite"
+
+        websocket.url = URL(string: "wss://test.mosquitto.org:8091")!
+        session.transport = websocket
         session.delegate = self
+        
+        session.userName = username
+        session.password = password
+        
+        session.connect()
     }
     
     func handleEvent(_ session: MQTTSession!, event eventCode: MQTTSessionEvent, error: Error!) {

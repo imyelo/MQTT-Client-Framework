@@ -10,9 +10,6 @@
 #endif
 #endif
 
-#import "MQTTSessionManager.h"
-#import "ReconnectTimer.h"
-#import "ForegroundReconnection.h"
 #import "MQTTCFSocketDecoder.h"
 #import "MQTTCFSocketEncoder.h"
 #import "MQTTCFSocketTransport.h"
@@ -31,9 +28,9 @@
 #import "MQTTProperties.h"
 #import "MQTTSession.h"
 #import "MQTTSessionLegacy.h"
-#import "MQTTSessionSynchron.h"
 #import "MQTTTransport.h"
 #import "GCDTimer.h"
+#import "MQTTWebsocketTransport.h"
 
 FOUNDATION_EXPORT double MQTTClientVersionNumber;
 FOUNDATION_EXPORT const unsigned char MQTTClientVersionString[];
